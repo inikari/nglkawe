@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For responsive design -->
+    <title>Success</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-success">Login Berhasil!</h1>
+        <p>Selamat datang, <strong>{{ username }}</strong>!</p>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+        
+        <h2 class="mt-4">Pesan Anda:</h2>
+        <ul class="list-group">
+            {% if messages %}
+                {% for message in messages %}
+                    <li class="list-group-item">
+                        {{ message.text }} - <em>{{ message.formatted_timestamp }}</em>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li class="list-group-item">Tidak ada pesan yang diterima.</li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies (optional, for interactive components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
